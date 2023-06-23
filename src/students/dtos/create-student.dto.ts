@@ -1,6 +1,6 @@
 import { IsString } from "class-validator";
 
-export class CreateStudetDto{
+export class CreateStudentDto{
 
     @IsString()
     fullname:string;

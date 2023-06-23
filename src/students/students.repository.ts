@@ -7,9 +7,14 @@ export class StudentRepository{
         //converting raw data to json
         const students = JSON.parse(contents);
 
-        //creating new students json
-        
-        students[id] = {id:students.id, fullname:students.fullname, address:students.address, contact:students.contact};
+        //creating new student json 
+        const newStudent = {
+            id: Math.floor(Math.random() * 999),
+            fullname: fullname,
+            address: address,
+            contact: contact,
+          };
+          students[newStudent.id] = newStudent;
         
         //store json
         await writeFile('students.json', JSON.stringify(students))

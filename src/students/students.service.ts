@@ -1,3 +1,4 @@
+import { CreateStudentDto } from "./dtos/create-student.dto";
 import { StudentRepository } from "./students.repository";
 
 export class StudentService {
@@ -16,7 +17,8 @@ export class StudentService {
     return this.studentRepo.find(id);
   }
 
-  create(content: string) {
-    return this.studentRepo.create(content);
+  create(dto: CreateStudentDto) {
+    const {fullname, id, address, contact} = dto;
+    return this.studentRepo.create(fullname, id, address, contact);
   }
 }
