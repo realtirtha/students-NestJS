@@ -9,7 +9,7 @@ export class StudentRepository{
 
         //creating new student json 
         const newStudent = {
-            id: Math.floor(Math.random() * 999),
+            id: id,
             fullname: fullname,
             address: address,
             contact: contact,
